@@ -1,0 +1,6 @@
+[submodule "run_shellcode"]
+	path = run_shellcode
+	url = https://github.com/wind-mask/run_shellcode.git
+[submodule "shellcode"]
+	path = shellcode
+	url = https://github.com/wind-mask/shellcode.git
