@@ -16,9 +16,7 @@ if __name__ == "__main__":
     # 打开文件
     with open("shellcode.bin", "rb") as file:
         # 定位到0x51字节之后的位置
-        # file.seek(0x713 + 1)
-        file.seek(0x491 + 1)
-        # file.seek(0xD73 + 1)
+        file.seek(0x48B + 1)
         # 读取剩余的文件内容
         data = file.read()
 
