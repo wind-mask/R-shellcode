@@ -1,0 +1,11 @@
+[package]
+name = "run_shellcode"
+version = "0.1.0"
+edition = "2021"
+authors = ["wind_mask"]
+license = "MIT"
+[[bin]]
+name = "run_shellcode"
+path = "src/main.rs"
+[dependencies]
+region = "3.0.2"

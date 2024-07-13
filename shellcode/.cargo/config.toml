@@ -1,0 +1,52 @@
+[target.x86_64-pc-windows-msvc]
+rustflags = [
+    # Pre Link Args
+    "-Z",
+    "pre-link-arg=/NODEFAULTLIB",
+    "--emit",
+    "asm",
+    # Post Link Args
+    "-C",
+    "link-arg=/ENTRY:main",
+    "-C",
+    "link-arg=/MERGE:.edata=.rdata",
+    "-C",
+    "link-arg=/MERGE:.rustc=.data",
+    "-C",
+    "link-arg=/MERGE:.rdata=.text",
+    "-C",
+    "link-arg=/MERGE:.pdata=.text",
+    "-C",
+    "link-arg=/DEBUG:NONE",
+    "-C",
+    "link-arg=/EMITPOGOPHASEINFO",
+    "-C",
+    "target-cpu=native",
+    "-C","target-feature=+sse4.2",
+    "-C",
+    "relocation-model=pic",
+    "-C",
+    "default-linker-libraries=false",
+
+]
+
+[target.x86_64-pc-windows-gnu]
+rustflags = [
+    "-lmcfgthread-1",
+    "-Zlocation-detail=none",
+    "-C",
+    "link-args=-Wl,-e,main",
+    "-C",
+    "link-args=-s",
+    "-C",
+    "target-cpu=native",
+    "-C",
+    "relocation-model=pic",
+    "-C",
+    "default-linker-libraries=false",
+    "-C",
+    "link-self-contained=no",
+    "-C",
+    "link-arg=-fuse-ld=lld",
+]
+linker = "x86_64-w64-mingw32-gcc"

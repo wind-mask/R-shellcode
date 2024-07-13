@@ -5,6 +5,7 @@ package.license = "MIT"
 package.repository = ""
 resolver = "2"
 exclude = ["shellcode"]
+repository = "https://github.com/wind-mask/R-shellcode.git"
 [profile.dev]
 opt-level = 0
 debug = true
